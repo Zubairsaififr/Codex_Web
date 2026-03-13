@@ -1,0 +1,84 @@
+/* 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Code', monospace;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+} */
+
+@import "tailwindcss";
+
+
+/* src/index.css */
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Baaki agar kuch body { background: ... } likha hai, toh usko DELETE kar de */
+
+
+/* Tumhari main CSS file (jaise index.css) mein ye add/update karo */
+
+/* Ye continuous scroll ke liye zaroori hai */
+.continuous-slider .swiper-wrapper {
+  transition-timing-function: linear !important; 
+}
+
+/* Yeh naya add karo! Hover karne par transition speed 0 kar dega, jisse fauran rukega */
+.continuous-slider:hover .swiper-wrapper {
+  transition-duration: 0ms !important;
+}
+
+
+
+
+/* index.css */
+.review-swiper .swiper-slide:not(.swiper-slide-active) {
+  opacity: 0 !important;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+
+/* index.css - Desktop Brake System for Sliders */
+.continuous-slider .swiper-wrapper,
+.project-slider .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+.continuous-slider:hover .swiper-wrapper,
+.project-slider:hover .swiper-wrapper {
+  transition-duration: 0ms !important;
+}
+
+/* Review Slider Fade Fix */
+.review-swiper .swiper-slide:not(.swiper-slide-active) {
+  opacity: 0 !important;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Custom Input Underline Animation */
+.input-underline {
+  position: relative;
+}
+.input-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #5cccbf;
+  transition: width 0.3s ease;
+}
+.input-underline:hover::after,
+.input-underline:focus-within::after {
+  width: 100%;
+}
